@@ -58,6 +58,3 @@ The app requires the following permissions to function correctly:
 - `WAKE_LOCK`: To ensure the service can wake up to perform checks (implicitly handled by Foreground Service).
 - `READ_EXTERNAL_STORAGE` / `READ_MEDIA_AUDIO`: To browse and select custom alert sounds.
 
-## License
-
-[MIT License](LICENSE)
