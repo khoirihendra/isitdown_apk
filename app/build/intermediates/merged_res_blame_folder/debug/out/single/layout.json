@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.example.isitdown.app-mergeDebugResources-30:/layout/item_log.xml",
+        "source": "com.example.isitdown.app-main-33:/layout/item_log.xml"
+    },
+    {
+        "merged": "C:\\Users\\khoir\\.gradle\\daemon\\9.0-milestone-1\\com.example.isitdown.app-mergeDebugResources-30:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\khoir\\.gradle\\daemon\\9.0-milestone-1\\com.example.isitdown.app-main-33:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\khoir\\.gradle\\daemon\\9.0-milestone-1\\com.example.isitdown.app-mergeDebugResources-30:\\layout\\activity_settings.xml",
+        "source": "C:\\Users\\khoir\\.gradle\\daemon\\9.0-milestone-1\\com.example.isitdown.app-main-33:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\khoir\\.gradle\\daemon\\9.0-milestone-1\\com.example.isitdown.app-mergeDebugResources-30:\\layout\\item_log.xml",
+        "source": "C:\\Users\\khoir\\.gradle\\daemon\\9.0-milestone-1\\com.example.isitdown.app-main-33:\\layout\\item_log.xml"
+    },
+    {
+        "merged": "com.example.isitdown.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "com.example.isitdown.app-main-33:/layout/activity_main.xml"
+    }
+]

@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.IsItDown" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/hacker_green</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/hacker_green</item>
+        <item name="colorSecondaryVariant">@color/primary_dark</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Backgrounds -->
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/hacker_green</item>
+        <!-- Text -->
+        <item name="android:textColor">@color/hacker_green</item>
+        <item name="android:textColorPrimary">@color/hacker_green</item>
+        <item name="android:textColorSecondary">@color/hacker_green</item>
+        <!-- Font -->
+        <item name="fontFamily">monospace</item>
+        <item name="android:fontFamily">monospace</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/terminal_black</item>
+        <!-- Customize your theme here. -->
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
+    </style>
+</resources>

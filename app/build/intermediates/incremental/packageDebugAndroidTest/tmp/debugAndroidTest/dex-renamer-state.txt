@@ -1,0 +1,7 @@
+#Thu Dec 25 21:26:11 WIB 2025
+base.0=D\:\\_MAIN\\_PROJECT\\_PROJECTS\\isitdown_apk\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+base.1=D\:\\_MAIN\\_PROJECT\\_PROJECTS\\isitdown_apk\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+path.0=classes.dex
+path.1=0/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex

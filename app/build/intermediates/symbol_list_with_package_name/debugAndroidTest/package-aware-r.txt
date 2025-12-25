@@ -1,0 +1,3 @@
+com.example.isitdown.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

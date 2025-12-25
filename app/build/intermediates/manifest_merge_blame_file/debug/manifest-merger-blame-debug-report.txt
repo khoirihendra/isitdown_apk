@@ -1,0 +1,174 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.isitdown"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:5:5-67
+11-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+12-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:6:5-77
+12-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:6:22-74
+13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+13-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:7:5-87
+13-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:7:22-84
+14    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+14-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:8:5-77
+14-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:8:22-74
+15    <uses-permission android:name="android.permission.WAKE_LOCK" />
+15-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:9:5-68
+15-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:9:22-65
+16    <!-- For reading custom audio files if needed from external storage, though we might stick to SAF or internal copy -->
+17    <uses-permission
+17-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:11:5-107
+18        android:name="android.permission.READ_EXTERNAL_STORAGE"
+18-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:11:22-77
+19        android:maxSdkVersion="32" />
+19-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:11:78-104
+20    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+20-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:12:5-75
+20-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:12:22-72
+21
+22    <permission
+22-->[androidx.core:core:1.12.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\6922351435ea8f9c85ba8a86e1edafee\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+23        android:name="com.example.isitdown.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+23-->[androidx.core:core:1.12.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\6922351435ea8f9c85ba8a86e1edafee\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+24        android:protectionLevel="signature" />
+24-->[androidx.core:core:1.12.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\6922351435ea8f9c85ba8a86e1edafee\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+25
+26    <uses-permission android:name="com.example.isitdown.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+26-->[androidx.core:core:1.12.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\6922351435ea8f9c85ba8a86e1edafee\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+26-->[androidx.core:core:1.12.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\6922351435ea8f9c85ba8a86e1edafee\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+27
+28    <application
+28-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:14:5-45:19
+29        android:allowBackup="true"
+29-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:15:9-35
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.12.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\6922351435ea8f9c85ba8a86e1edafee\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+31        android:dataExtractionRules="@xml/data_extraction_rules"
+31-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:16:9-65
+32        android:debuggable="true"
+33        android:extractNativeLibs="false"
+34        android:fullBackupContent="@xml/backup_rules"
+34-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:17:9-54
+35        android:icon="@mipmap/ic_launcher"
+35-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:18:9-43
+36        android:label="@string/app_name"
+36-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:19:9-41
+37        android:roundIcon="@mipmap/ic_launcher_round"
+37-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:20:9-54
+38        android:supportsRtl="true"
+38-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:21:9-35
+39        android:theme="@style/Theme.IsItDown" >
+39-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:22:9-46
+40        <activity
+40-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:25:9-33:20
+41            android:name="com.example.isitdown.ui.MainActivity"
+41-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:26:13-44
+42            android:exported="true"
+42-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:27:13-36
+43            android:launchMode="singleTop" >
+43-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:28:13-43
+44            <intent-filter>
+44-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:29:13-32:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:30:17-69
+45-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:30:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:31:17-77
+47-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:31:27-74
+48            </intent-filter>
+49        </activity>
+50        <activity
+50-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:35:9-37:40
+51            android:name="com.example.isitdown.ui.SettingsActivity"
+51-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:36:13-48
+52            android:exported="false" />
+52-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:37:13-37
+53
+54        <service
+54-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:39:9-43:56
+55            android:name="com.example.isitdown.MonitorService"
+55-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:40:13-43
+56            android:enabled="true"
+56-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:41:13-35
+57            android:exported="false"
+57-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:42:13-37
+58            android:foregroundServiceType="dataSync" />
+58-->D:\_MAIN\_PROJECT\_PROJECTS\isitdown_apk\app\src\main\AndroidManifest.xml:43:13-53
+59
+60        <provider
+60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\65d3f38122963991093b182f4c2e9c37\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+61            android:name="androidx.startup.InitializationProvider"
+61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\65d3f38122963991093b182f4c2e9c37\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+62            android:authorities="com.example.isitdown.androidx-startup"
+62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\65d3f38122963991093b182f4c2e9c37\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+63            android:exported="false" >
+63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\65d3f38122963991093b182f4c2e9c37\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+64            <meta-data
+64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\65d3f38122963991093b182f4c2e9c37\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+65                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\65d3f38122963991093b182f4c2e9c37\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+66                android:value="androidx.startup" />
+66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\65d3f38122963991093b182f4c2e9c37\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+67            <meta-data
+67-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\ecbba253c2d620f75e51071761e0b4b1\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+68                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+68-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\ecbba253c2d620f75e51071761e0b4b1\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+69                android:value="androidx.startup" />
+69-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\ecbba253c2d620f75e51071761e0b4b1\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+70            <meta-data
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+71                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+72                android:value="androidx.startup" />
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+73        </provider>
+74
+75        <receiver
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+76            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+77            android:directBootAware="false"
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+78            android:enabled="true"
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+79            android:exported="true"
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+80            android:permission="android.permission.DUMP" >
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+81            <intent-filter>
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+82                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+83            </intent-filter>
+84            <intent-filter>
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+85                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+86            </intent-filter>
+87            <intent-filter>
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+88                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+89            </intent-filter>
+90            <intent-filter>
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+91                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\khoir\.gradle\caches\9.0-milestone-1\transforms\1cbbfffd256a4ca0e27ed553f9dcc9f1\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+92            </intent-filter>
+93        </receiver>
+94    </application>
+95
+96</manifest>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/custom_audio"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnSelectAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_audio"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvSelectedAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Default"
+        android:layout_marginBottom="24dp"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alert_frequency"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/rgFrequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+
+        <RadioButton
+            android:id="@+id/rbOnce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/freq_once"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rbTwice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/freq_twice" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/log_retention"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+     <RadioGroup
+        android:id="@+id/rgRetention"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb24h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retention_24h" />
+
+        <RadioButton
+            android:id="@+id/rb3d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retention_3d" />
+
+        <RadioButton
+            android:id="@+id/rb1w"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retention_1w"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rbForever"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retention_forever" />
+
+    </RadioGroup>
+
+</LinearLayout>
