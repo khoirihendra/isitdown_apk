@@ -15,10 +15,6 @@
 - **Auto-Pruning**: Automatically deletes old logs based on a configurable retention period (default 7 days) to save space.
 - **Configurable Interval**: Set the check frequency to suit your needs (e.g., every 5 minutes).
 
-## Screenshots
-
-*(Add your screenshots here)*
-
 ## Getting Started
 
 ### Prerequisites
