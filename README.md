@@ -15,10 +15,6 @@
 - **Auto-Pruning**: Automatically deletes old logs based on a configurable retention period (default 7 days) to save space.
 - **Configurable Interval**: Set the check frequency to suit your needs (e.g., every 5 minutes).
 
-## Screenshots
-
-*(Add your screenshots here)*
-
 ## Getting Started
 
 ### Prerequisites
@@ -62,6 +58,3 @@ The app requires the following permissions to function correctly:
 - `WAKE_LOCK`: To ensure the service can wake up to perform checks (implicitly handled by Foreground Service).
 - `READ_EXTERNAL_STORAGE` / `READ_MEDIA_AUDIO`: To browse and select custom alert sounds.
 
-## License
-
-[MIT License](LICENSE)
