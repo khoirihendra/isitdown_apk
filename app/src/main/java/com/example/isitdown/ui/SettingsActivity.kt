@@ -54,12 +54,25 @@ class SettingsActivity : AppCompatActivity() {
             // Note: some audio files might have different mime types, "audio/*" is general
         }
 
+        binding.btnResetAudio.setOnClickListener {
+            prefs.edit().remove(KEY_AUDIO_URI).remove(KEY_AUDIO_NAME).apply()
+            updateAudioUi()
+        }
+
         // Frequency
-        val freq = prefs.getInt(KEY_ALERT_FREQ, 1)
-        if (freq == 2) binding.rbTwice.isChecked = true else binding.rbOnce.isChecked = true
+        val freq = prefs.getInt(KEY_ALERT_FREQ, 3)
+        when (freq) {
+             2 -> binding.rbTwice.isChecked = true
+             3 -> binding.rb3Times.isChecked = true
+             else -> binding.rbOnce.isChecked = true
+        }
 
         binding.rgFrequency.setOnCheckedChangeListener { _, checkedId ->
-            val value = if (checkedId == R.id.rbTwice) 2 else 1
+            val value = when (checkedId) {
+                R.id.rbTwice -> 2
+                R.id.rb3Times -> 3
+                else -> 1
+            }
             prefs.edit().putInt(KEY_ALERT_FREQ, value).apply()
         }
 

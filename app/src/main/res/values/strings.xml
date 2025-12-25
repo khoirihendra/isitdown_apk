@@ -10,9 +10,10 @@
     <string name="settings">Settings</string>
     <string name="custom_audio">Custom Alert Audio</string>
     <string name="select_audio">Select Audio File</string>
-    <string name="alert_frequency">Alert Frequency</string>
-    <string name="freq_once">Once</string>
-    <string name="freq_twice">Twice</string>
+    <string name="alert_frequency">Beep Repetition</string>
+    <string name="freq_once">1 Time</string>
+    <string name="freq_twice">2 Times</string>
+    <string name="freq_3times">3 Times</string>
     <string name="log_retention">Log Retention</string>
     <string name="retention_24h">24 Hours</string>
     <string name="retention_3d">3 Days</string>

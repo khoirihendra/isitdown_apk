@@ -23,6 +23,9 @@ public final class ActivitySettingsBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final Button btnResetAudio;
+
+  @NonNull
   public final Button btnSelectAudio;
 
   @NonNull
@@ -30,6 +33,9 @@ public final class ActivitySettingsBinding implements ViewBinding {
 
   @NonNull
   public final RadioButton rb24h;
+
+  @NonNull
+  public final RadioButton rb3Times;
 
   @NonNull
   public final RadioButton rb3d;
@@ -52,15 +58,17 @@ public final class ActivitySettingsBinding implements ViewBinding {
   @NonNull
   public final TextView tvSelectedAudio;
 
-  private ActivitySettingsBinding(@NonNull LinearLayout rootView, @NonNull Button btnSelectAudio,
-      @NonNull RadioButton rb1w, @NonNull RadioButton rb24h, @NonNull RadioButton rb3d,
-      @NonNull RadioButton rbForever, @NonNull RadioButton rbOnce, @NonNull RadioButton rbTwice,
-      @NonNull RadioGroup rgFrequency, @NonNull RadioGroup rgRetention,
-      @NonNull TextView tvSelectedAudio) {
+  private ActivitySettingsBinding(@NonNull LinearLayout rootView, @NonNull Button btnResetAudio,
+      @NonNull Button btnSelectAudio, @NonNull RadioButton rb1w, @NonNull RadioButton rb24h,
+      @NonNull RadioButton rb3Times, @NonNull RadioButton rb3d, @NonNull RadioButton rbForever,
+      @NonNull RadioButton rbOnce, @NonNull RadioButton rbTwice, @NonNull RadioGroup rgFrequency,
+      @NonNull RadioGroup rgRetention, @NonNull TextView tvSelectedAudio) {
     this.rootView = rootView;
+    this.btnResetAudio = btnResetAudio;
     this.btnSelectAudio = btnSelectAudio;
     this.rb1w = rb1w;
     this.rb24h = rb24h;
+    this.rb3Times = rb3Times;
     this.rb3d = rb3d;
     this.rbForever = rbForever;
     this.rbOnce = rbOnce;
@@ -97,6 +105,12 @@ public final class ActivitySettingsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnResetAudio;
+      Button btnResetAudio = ViewBindings.findChildViewById(rootView, id);
+      if (btnResetAudio == null) {
+        break missingId;
+      }
+
       id = R.id.btnSelectAudio;
       Button btnSelectAudio = ViewBindings.findChildViewById(rootView, id);
       if (btnSelectAudio == null) {
@@ -112,6 +126,12 @@ public final class ActivitySettingsBinding implements ViewBinding {
       id = R.id.rb24h;
       RadioButton rb24h = ViewBindings.findChildViewById(rootView, id);
       if (rb24h == null) {
+        break missingId;
+      }
+
+      id = R.id.rb3Times;
+      RadioButton rb3Times = ViewBindings.findChildViewById(rootView, id);
+      if (rb3Times == null) {
         break missingId;
       }
 
@@ -157,8 +177,9 @@ public final class ActivitySettingsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySettingsBinding((LinearLayout) rootView, btnSelectAudio, rb1w, rb24h, rb3d,
-          rbForever, rbOnce, rbTwice, rgFrequency, rgRetention, tvSelectedAudio);
+      return new ActivitySettingsBinding((LinearLayout) rootView, btnResetAudio, btnSelectAudio,
+          rb1w, rb24h, rb3Times, rb3d, rbForever, rbOnce, rbTwice, rgFrequency, rgRetention,
+          tvSelectedAudio);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

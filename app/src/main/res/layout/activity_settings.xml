@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -10,20 +11,49 @@
         android:layout_height="wrap_content"
         android:text="@string/custom_audio"
         android:textStyle="bold"
+        android:textColor="@color/hacker_green"
+        android:fontFamily="monospace"
         android:layout_marginBottom="8dp" />
 
-    <Button
-        android:id="@+id/btnSelectAudio"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/select_audio"
-        android:layout_marginBottom="4dp" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="4dp">
+
+        <Button
+            android:id="@+id/btnSelectAudio"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/select_audio"
+            android:textColor="@color/hacker_green"
+            android:fontFamily="monospace"
+            app:strokeColor="@color/hacker_green"
+            app:strokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <Button
+            android:id="@+id/btnResetAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Reset"
+            android:textColor="@color/red_error"
+            android:fontFamily="monospace"
+            app:strokeColor="@color/red_error"
+            app:strokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvSelectedAudio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Default"
+        android:textColor="@color/hacker_green"
+        android:fontFamily="monospace"
         android:layout_marginBottom="24dp"
         android:textSize="12sp" />
 
@@ -32,6 +62,8 @@
         android:layout_height="wrap_content"
         android:text="@string/alert_frequency"
         android:textStyle="bold"
+        android:textColor="@color/hacker_green"
+        android:fontFamily="monospace"
         android:layout_marginBottom="8dp" />
 
     <RadioGroup
@@ -45,13 +77,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/freq_once"
-            android:checked="true" />
+            android:textColor="@color/hacker_green"
+            android:buttonTint="@color/hacker_green"
+            android:fontFamily="monospace" />
 
         <RadioButton
             android:id="@+id/rbTwice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/freq_twice" />
+            android:text="@string/freq_twice"
+            android:textColor="@color/hacker_green"
+            android:buttonTint="@color/hacker_green"
+            android:fontFamily="monospace" />
+
+        <RadioButton
+            android:id="@+id/rb3Times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/freq_3times"
+            android:textColor="@color/hacker_green"
+            android:buttonTint="@color/hacker_green"
+            android:fontFamily="monospace"
+            android:checked="true" />
     </RadioGroup>
 
     <TextView
@@ -59,6 +106,8 @@
         android:layout_height="wrap_content"
         android:text="@string/log_retention"
         android:textStyle="bold"
+        android:textColor="@color/hacker_green"
+        android:fontFamily="monospace"
         android:layout_marginBottom="8dp" />
 
      <RadioGroup
@@ -70,26 +119,38 @@
             android:id="@+id/rb24h"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/retention_24h" />
+            android:text="@string/retention_24h"
+            android:textColor="@color/hacker_green"
+            android:buttonTint="@color/hacker_green"
+            android:fontFamily="monospace" />
 
         <RadioButton
             android:id="@+id/rb3d"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/retention_3d" />
+            android:text="@string/retention_3d"
+            android:textColor="@color/hacker_green"
+            android:buttonTint="@color/hacker_green"
+            android:fontFamily="monospace" />
 
         <RadioButton
             android:id="@+id/rb1w"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/retention_1w"
+            android:textColor="@color/hacker_green"
+            android:buttonTint="@color/hacker_green"
+            android:fontFamily="monospace"
             android:checked="true" />
 
         <RadioButton
             android:id="@+id/rbForever"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/retention_forever" />
+            android:text="@string/retention_forever"
+            android:textColor="@color/hacker_green"
+            android:buttonTint="@color/hacker_green"
+            android:fontFamily="monospace" />
 
     </RadioGroup>
 

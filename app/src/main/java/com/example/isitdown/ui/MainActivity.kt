@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerInterval.adapter = adapter
-        binding.spinnerInterval.setSelection(2) // Default to 5 Minutes (Index 2)
+        binding.spinnerInterval.setSelection(0) // Default to Real Time (Index 0)
     }
 
     override fun onResume() {
@@ -134,13 +134,13 @@ class MainActivity : AppCompatActivity() {
         // Get Settings
         val prefs = getSharedPreferences(SettingsActivity.PREFS_NAME, Context.MODE_PRIVATE)
         val audioUri = prefs.getString(SettingsActivity.KEY_AUDIO_URI, null)
-        val alertFreq = prefs.getInt(SettingsActivity.KEY_ALERT_FREQ, 1)
+        val alertFreq = prefs.getInt(SettingsActivity.KEY_ALERT_FREQ, 3)
 
         // Get Interval
         // Map spinner index to value manually since we can't easily read integer-array from non-XML context perfectly without typed array
         val selectedIndex = binding.spinnerInterval.selectedItemPosition
         val intervals = resources.getIntArray(R.array.interval_values_ms)
-        val interval = if (selectedIndex in intervals.indices) intervals[selectedIndex].toLong() else 300000L
+        val interval = if (selectedIndex in intervals.indices) intervals[selectedIndex].toLong() else 1000L
 
         val intent = Intent(this, MonitorService::class.java).apply {
             action = MonitorService.ACTION_START

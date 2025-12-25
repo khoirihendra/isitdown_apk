@@ -38,13 +38,14 @@
     <color name="white">#FFFFFF</color>
     <string name="alert_down_text">%1$s is currently unreachable.</string>
     <string name="alert_down_title">Host is DOWN!</string>
-    <string name="alert_frequency">Alert Frequency</string>
+    <string name="alert_frequency">Beep Repetition</string>
     <string name="app_name">IsItDown</string>
     <string name="clear_logs">Clear Logs</string>
     <string name="custom_audio">Custom Alert Audio</string>
     <string name="enter_host_hint">Enter URL (e.g. https://google.com)</string>
-    <string name="freq_once">Once</string>
-    <string name="freq_twice">Twice</string>
+    <string name="freq_3times">3 Times</string>
+    <string name="freq_once">1 Time</string>
+    <string name="freq_twice">2 Times</string>
     <string name="log_retention">Log Retention</string>
     <string name="notification_channel_name">Monitor Service</string>
     <string name="notification_text">Monitoring %1$s...</string>

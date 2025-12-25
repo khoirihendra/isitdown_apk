@@ -32,9 +32,13 @@ class MonitorService : Service() {
 
         const val EXTRA_INTERVAL = "EXTRA_INTERVAL" // Long millis
 
-        const val CHANNEL_ID = "monitor_channel"
+        const val CHANNEL_ID = "monitor_channel_smart_alert"
         const val NOTIFICATION_ID = 1
     }
+
+
+
+
 
     private var serviceJob: Job? = null
     private val serviceScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
@@ -75,52 +79,61 @@ class MonitorService : Service() {
             logRepository.writeLog("Started monitoring $host (every ${interval/60000}m)", false)
             broadcastStatus("Monitoring...")
 
-            var wasDown: Boolean? = null // Tri-state: null (init), false, true
+            var lastStatus = "UNKNOWN"
 
             while (isActive && isMonitoring) {
+                var currentStatus = "UNKNOWN"
                 val isInternet = NetworkUtils.isInternetAvailable()
                 
                 if (!isInternet) {
-                    logRepository.writeLog("No Internet Connection", true)
-                    broadcastStatus("No Internet")
-                    val timestamp = getTimestamp()
-                    updateNotification("Waiting for Internet...\nLast check: $timestamp", false)
-                    wasDown = null // Reset so next status change triggers log/alert if needed
+                    currentStatus = "NO_INTERNET"
                 } else {
                     val isReachable = NetworkUtils.isHostReachable(host)
-                    val isDown = !isReachable
-    
-                    if (isDown) {
-                        logRepository.writeLog("Host $host is DOWN", true)
-                        broadcastStatus("DOWN")
-                        
-                        if (wasDown != true) {
-                            // Changed to DOWN or Initial check
-                            playAlert(audioUriStr, alertFreq)
-                            val timestamp = getTimestamp()
-                            updateNotification("Alert: $host is DOWN!\nLast check: $timestamp", true)
-                        } else {
-                            // Still down, maybe update timestamp?
-                            val timestamp = getTimestamp()
-                            updateNotification("Alert: $host is DOWN!\nLast check: $timestamp", true)
-                        }
-                    } else {
-                        // is UP
-                        if (wasDown != false) {
-                             // Changed to UP or Initial check
-                             logRepository.writeLog("Host $host is UP", false)
-                             val timestamp = getTimestamp()
-                             updateNotification("Server is UP: $host\nLast check: $timestamp", false)
-                        }
-                        // Periodic update? 
-                        // Let's at least broadcast UP status every time
-                        broadcastStatus("UP")
-                        // Also update notification with latest time even if status didn't change
-                        val timestamp = getTimestamp()
-                        updateNotification("Server is UP: $host\nLast check: $timestamp", false)
-                    }
-                    wasDown = isDown
+                    if (!isReachable) currentStatus = "DOWN" else currentStatus = "UP"
                 }
+
+                val timestamp = getTimestamp()
+                
+                // Broadcast status for UI
+                val visibleStatus = when(currentStatus) {
+                    "NO_INTERNET" -> "No Internet"
+                    "DOWN" -> "DOWN"
+                    "UP" -> "UP"
+                    else -> "Monitoring..."
+                }
+                broadcastStatus(visibleStatus)
+
+                if (currentStatus != lastStatus) {
+                    // Status Changed
+                    when (currentStatus) {
+                        "NO_INTERNET" -> {
+                            logRepository.writeLog("No Internet Connection", true)
+                            playAlert(audioUriStr, alertFreq)
+                            // Alert ONCE for No Internet
+                            updateNotification("[NO INTERNET] Waiting...\nLast check: $timestamp", true, shouldAlert = true)
+                        }
+                        "DOWN" -> {
+                            logRepository.writeLog("Host $host is DOWN", true)
+                            playAlert(audioUriStr, alertFreq)
+                            // Alert ONCE for DOWN
+                            updateNotification("[DOWN] $host\nLast check: $timestamp", true, shouldAlert = true)
+                        }
+                        "UP" -> {
+                            logRepository.writeLog("Host $host is UP", false)
+                            // Silent update for UP
+                            updateNotification("[UP] $host\nLast check: $timestamp", false, shouldAlert = false)
+                        }
+                    }
+                } else {
+                    // Status unchanged, update timestamp (Silent)
+                    when (currentStatus) {
+                        "NO_INTERNET" -> updateNotification("[NO INTERNET] Waiting...\nLast check: $timestamp", true, shouldAlert = false)
+                        "DOWN" -> updateNotification("[DOWN] $host\nLast check: $timestamp", true, shouldAlert = false)
+                        "UP" -> updateNotification("[UP] $host\nLast check: $timestamp", false, shouldAlert = false)
+                    }
+                }
+
+                lastStatus = currentStatus
                 delay(interval)
             }
         }
@@ -188,7 +201,7 @@ class MonitorService : Service() {
             val channel = NotificationChannel(
                 CHANNEL_ID,
                 getString(R.string.notification_channel_name),
-                NotificationManager.IMPORTANCE_LOW
+                NotificationManager.IMPORTANCE_DEFAULT
             )
             val manager = getSystemService(NotificationManager::class.java)
             manager.createNotificationChannel(channel)
@@ -220,7 +233,7 @@ class MonitorService : Service() {
         return sdf.format(Date())
     }
 
-    private fun updateNotification(text: String, isAlert: Boolean) {
+    private fun updateNotification(text: String, isAlert: Boolean, shouldAlert: Boolean = false) {
         val manager = getSystemService(NotificationManager::class.java)
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(getString(R.string.notification_title))
@@ -231,11 +244,9 @@ class MonitorService : Service() {
                 PendingIntent.getService(this, 0, Intent(this, MonitorService::class.java).apply { action = ACTION_STOP }, PendingIntent.FLAG_IMMUTABLE)
             )
             .setOngoing(true)
+            .setOnlyAlertOnce(!shouldAlert) // If shouldAlert is TRUE, setOnlyAlertOnce to FALSE (allow alert)
+            .setPriority(if (shouldAlert) NotificationCompat.PRIORITY_HIGH else NotificationCompat.PRIORITY_LOW)
             
-        // Use high importance for Down alert? Default is LOW for persistent service.
-        // Maybe create a separate channel for ALERTS with HIGH importance?
-        // keeping it simple for now.
-        
         manager.notify(NOTIFICATION_ID, builder.build())
     }
 

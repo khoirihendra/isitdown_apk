@@ -36,6 +36,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button btnStartStop;
 
   @NonNull
+  public final ConstraintLayout controlPanel;
+
+  @NonNull
   public final TextInputEditText etHost;
 
   @NonNull
@@ -58,13 +61,15 @@ public final class ActivityMainBinding implements ViewBinding {
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnClearLogs,
       @NonNull ImageButton btnSettings, @NonNull Button btnStartStop,
-      @NonNull TextInputEditText etHost, @NonNull TextInputLayout inputLayout,
-      @NonNull LinearLayout intervalContainer, @NonNull RecyclerView rvLogs,
-      @NonNull Spinner spinnerInterval, @NonNull TextView tvLogsLabel, @NonNull TextView tvStatus) {
+      @NonNull ConstraintLayout controlPanel, @NonNull TextInputEditText etHost,
+      @NonNull TextInputLayout inputLayout, @NonNull LinearLayout intervalContainer,
+      @NonNull RecyclerView rvLogs, @NonNull Spinner spinnerInterval, @NonNull TextView tvLogsLabel,
+      @NonNull TextView tvStatus) {
     this.rootView = rootView;
     this.btnClearLogs = btnClearLogs;
     this.btnSettings = btnSettings;
     this.btnStartStop = btnStartStop;
+    this.controlPanel = controlPanel;
     this.etHost = etHost;
     this.inputLayout = inputLayout;
     this.intervalContainer = intervalContainer;
@@ -119,6 +124,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.controlPanel;
+      ConstraintLayout controlPanel = ViewBindings.findChildViewById(rootView, id);
+      if (controlPanel == null) {
+        break missingId;
+      }
+
       id = R.id.etHost;
       TextInputEditText etHost = ViewBindings.findChildViewById(rootView, id);
       if (etHost == null) {
@@ -162,8 +173,8 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, btnClearLogs, btnSettings,
-          btnStartStop, etHost, inputLayout, intervalContainer, rvLogs, spinnerInterval,
-          tvLogsLabel, tvStatus);
+          btnStartStop, controlPanel, etHost, inputLayout, intervalContainer, rvLogs,
+          spinnerInterval, tvLogsLabel, tvStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
